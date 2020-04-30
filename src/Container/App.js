@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import Routes from "../routes/routes";
-import { Link } from "@reach/router";
-import Football from "../Components/Football-TestTest/Football";
-
+import Header from "../Components/Header";
+import Navbar from "../Components/Navbar";
 
 export default class App extends Component {
+  state = {
+    menuIsOpen: false
+  }
+
+  toggleMenu = () => {
+    this.setState({
+      menuIsOpen: !this.state.menuIsOpen
+    })
+  }
   render(){
     return(
     <main>
-      <p>Container Works!!</p>
+      <Header toggleMenu={this.toggleMenu}/>
+      <Navbar menuIsOpen={this.state.menuIsOpen} toggeMenu={this.toggeMenu} />
       <Routes />
-      <Link to="/football" route="/football">Football Page</Link>
-      <Link to="/quiz" route="/quiz">Quiz Page</Link>
-      <Link to ="/weatherapi" route="weatherapi">Weather API Page</Link>
-      
     </main>)
   }
 }
