@@ -36,11 +36,12 @@ export default class WeatherAPI extends Component {
     }
 
     render() {
+        console.log(this.state.cities)
         return (
             <section className={styles.allCards}>
                 {
-                    Object.entries(this.state.cities).map((city) => {
-                        return (<WeatherCard city={city[1]} />)
+                    Object.entries(this.state.cities).map((city, index) => {
+                        return (<WeatherCard city={city[1]} key={index}/>)
                     })
                 }
             </section>

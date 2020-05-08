@@ -1,0 +1,31 @@
+.maindiv {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    width: 130px;
+    text-align: center;
+  }
+
+.maindiv:hover{
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 0 10px 20px 0 #ffffff40, 0 10px 20px 0 #ffffff40;
+  transform: scale(1.1);
+} 
+  
+  .playersname {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    width: 150px;
+  }
+
+  .playersname:hover{
+    color: #045c17;
+  }

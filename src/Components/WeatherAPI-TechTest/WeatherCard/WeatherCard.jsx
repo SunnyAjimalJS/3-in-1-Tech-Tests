@@ -13,7 +13,7 @@ export default class WeatherCard extends Component{
         return celcius;
     }
 
-    componentWillMount(){
+    componentDidMount(){
         let cityID = this.props.city; 
         let weatherURL = `https://api.openweathermap.org/data/2.5/weather?id=${cityID}&appid=1f920ea0c70e5efd97f29c5f26689d32`
         fetch(weatherURL)
