@@ -6,7 +6,6 @@ Eg. pizza validates true when typed in an input */
 import styles from "./Quiz.module.scss";
 import React, { Component } from "react";
 
-
 export default class Quiz extends Component {
   state = {
     questions: [
@@ -18,28 +17,30 @@ export default class Quiz extends Component {
         answer_c: "Lasagna",
         answer_d: "All of the above",
         correct_answer: "Pizza",
-      }
-    ], 
-    value: ''
-  }
+      },
+    ],
+    value: "",
+  };
 
   handleInputChange = (event) => {
-    this.setState({value: event.target.value});
-    }
+    this.setState({ value: event.target.value });
+  };
 
-  checkAnswer(){
-    if(this.state.value === this.state.questions[0].correct_answer){
-      alert("Your answer was " + this.state.value + " - Your answer is correct!")
-    } else{ 
-      alert("Your answer was " + this.state.value + " - Wrong Answer!")
+  checkAnswer() {
+    if (this.state.value === this.state.questions[0].correct_answer) {
+      alert(
+        "Your answer was " + this.state.value + " - Your answer is correct!"
+      );
+    } else {
+      alert("Your answer was " + this.state.value + " - Wrong Answer!");
     }
   }
 
   handeSubmit = (e) => {
     e.preventDefault();
-    this.checkAnswer()
-  }
- 
+    this.checkAnswer();
+  };
+
   render() {
     return (
       <main>
