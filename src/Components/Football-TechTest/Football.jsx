@@ -14,8 +14,7 @@ The UI should reflect the user choices.
 import React, { Component } from "react";
 import { FootballTeamData } from "./FootballTeamData";
 import styles from "./Football.module.scss";
-import Players from "./PlayerCard/Players";
-import lawn from "./Assets/Lawn.jpg"
+import PlayerCard from "./PlayerCard/PlayerCard";
 
 export default class Football extends Component {
   state = {
@@ -25,6 +24,36 @@ export default class Football extends Component {
     selectedDefender: 0,
     selectedMidfielder: 0,
     selectedAttacker: 0,
+  };
+
+  handleClick = (player) => {
+    const playerIndex = this.state.availablePlayers.includes(player)
+      ? this.state.availablePlayers.indexOf(player)
+      : this.state.selectedTeam.indexOf(player);
+
+    if (
+      this.state.availablePlayers.includes(player) &&
+      this.checkPlayerType(player)
+    ) {
+      const removingPlayer = this.state.availablePlayers;
+      const addingPlayer = this.state.selectedTeam;
+      addingPlayer.push(player);
+      removingPlayer.splice(playerIndex, 1);
+      this.setState({
+        availablePlayers: removingPlayer,
+        selectedTeam: addingPlayer,
+      });
+    } else if (this.state.selectedTeam.includes(player)) {
+      this.adjustSelectedTeam(player);
+      const removingPlayer = this.state.selectedTeam;
+      const addingPlayer = this.state.availablePlayers;
+      addingPlayer.push(player);
+      removingPlayer.splice(playerIndex, 1);
+      this.setState({
+        availablePlayers: addingPlayer,
+        selectedTeam: removingPlayer,
+      });
+    }
   };
 
   checkPlayerType = (player) => {
@@ -87,92 +116,65 @@ export default class Football extends Component {
     });
   };
 
-  handleClick = (player) => {
-    const playerIndex = this.state.availablePlayers.includes(player)
-      ? this.state.availablePlayers.indexOf(player)
-      : this.state.selectedTeam.indexOf(player);
-
-    if (
-      this.state.availablePlayers.includes(player) &&
-      this.checkPlayerType(player)
-    ) {
-      const removingPlayer = this.state.availablePlayers;
-      const addingPlayer = this.state.selectedTeam;
-      addingPlayer.push(player);
-      removingPlayer.splice(playerIndex, 1);
-      this.setState({
-        availablePlayers: removingPlayer,
-        selectedTeam: addingPlayer,
-      });
-    } else if (this.state.selectedTeam.includes(player)) {
-      this.adjustSelectedTeam(player);
-      const removingPlayer = this.state.selectedTeam;
-      const addingPlayer = this.state.availablePlayers;
-      addingPlayer.push(player);
-      removingPlayer.splice(playerIndex, 1);
-      this.setState({
-        availablePlayers: addingPlayer,
-        selectedTeam: removingPlayer,
-      });
-    }
-  };
-
   render() {
     return (
-      <React.Fragment>
+      <>
         <div className={styles.container}>
           <section className={styles.availablePlayers}>
-          <div className={styles.availableGoalkeeper}>
+            <div>
               {this.state.availablePlayers.map((eachElement, index) => {
                 if (eachElement.position === "Goalkeeper") {
                   return (
-                    <Players
+                    <PlayerCard
                       key={index}
                       player={eachElement}
                       handleClick={this.handleClick}
                     />
                   );
                 }
+                return null;
               })}
             </div>
-          
-            <div className={styles.avaDef}>
+            <div>
               {this.state.availablePlayers.map((eachElement, index) => {
                 if (eachElement.position === "Defender") {
                   return (
-                    <Players
+                    <PlayerCard
                       key={index}
                       player={eachElement}
                       handleClick={this.handleClick}
                     />
                   );
                 }
+                return null;
               })}
             </div>
-            <div className={styles.avaMid}>
+            <div>
               {this.state.availablePlayers.map((eachElement, index) => {
                 if (eachElement.position === "Midfielder") {
                   return (
-                    <Players
+                    <PlayerCard
                       key={index}
                       player={eachElement}
                       handleClick={this.handleClick}
                     />
                   );
                 }
+                return null;
               })}
             </div>
-            <div className={styles.avaAttac}>
+            <div>
               {this.state.availablePlayers.map((eachElement, index) => {
                 if (eachElement.position === "Attacker") {
                   return (
-                    <Players
+                    <PlayerCard
                       key={index}
                       player={eachElement}
                       handleClick={this.handleClick}
                     />
                   );
                 }
+                return null;
               })}
             </div>
           </section>
@@ -182,7 +184,7 @@ export default class Football extends Component {
                 if (eachElement.position === "Goalkeeper") {
                   return (
                     <>
-                      <Players
+                      <PlayerCard
                         key={index}
                         player={eachElement}
                         handleClick={this.handleClick}
@@ -190,50 +192,54 @@ export default class Football extends Component {
                     </>
                   );
                 }
+                return null;
               })}
             </div>
             <div className={styles.selectedDefender}>
               {this.state.selectedTeam.map((eachElement, index) => {
                 if (eachElement.position === "Defender") {
                   return (
-                    <Players
+                    <PlayerCard
                       key={index}
                       player={eachElement}
                       handleClick={this.handleClick}
                     />
                   );
                 }
+                return null;
               })}
             </div>
             <div className={styles.selectedMidfielder}>
               {this.state.selectedTeam.map((eachElement, index) => {
                 if (eachElement.position === "Midfielder") {
                   return (
-                    <Players
+                    <PlayerCard
                       key={index}
                       player={eachElement}
                       handleClick={this.handleClick}
                     />
                   );
                 }
+                return null;
               })}
             </div>
             <div className={styles.selectedAttacker}>
               {this.state.selectedTeam.map((eachElement, index) => {
                 if (eachElement.position === "Attacker") {
                   return (
-                    <Players
+                    <PlayerCard
                       key={index}
                       player={eachElement}
                       handleClick={this.handleClick}
                     />
                   );
                 }
+                return null;
               })}
             </div>
           </section>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

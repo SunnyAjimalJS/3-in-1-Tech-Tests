@@ -1,4 +1,5 @@
 .maindiv {
+  
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -9,6 +10,7 @@
     margin-right: 10px;
     width: 130px;
     text-align: center;
+    
   }
 
 .maindiv:hover{
@@ -20,7 +22,7 @@
   
   .playersname {
     color: white;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     width: 150px;

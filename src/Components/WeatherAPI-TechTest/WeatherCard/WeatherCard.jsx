@@ -29,20 +29,21 @@ export default class WeatherCard extends Component{
 
     render(){
         return(
-            <section>
+            <section >
                 {   !this.state.weather,
                     !this.state.weatherData
                         ? <p></p>
-                        : <article>
-                            <h1>Weather for: {this.state.weatherData.name}</h1>
+                        : <article className={styles.Card}>
+                            <h1 className={styles.City}>Weather for: {this.state.weatherData.name}</h1>
                             <p>Current Temperature: {this.convertKelvinToCelsius(this.state.weatherData.main.temp)}<span>&deg;C</span></p>
                             <div className={styles.weatherIcon}>
                                 <img src={`http://openweathermap.org/img/w/${this.state.weatherData.weather[0].icon}.png`} alt="icon"></img>
                             </div>
-
+                            <div className={styles.bottomText}>
                             <p>Humidity: {this.state.weatherData.main.humidity}%</p>
                             <p>Min Temperature: {this.convertKelvinToCelsius(this.state.weatherData.main.temp_min)}<span>&deg;C</span></p>
                             <p>Max Temperature: {this.convertKelvinToCelsius(this.state.weatherData.main.temp_max)}<span>&deg;C</span></p>
+                            </div>
                         </article>
                 }
             </section>

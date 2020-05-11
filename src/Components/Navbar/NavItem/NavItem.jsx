@@ -5,11 +5,10 @@ import { Link } from "@reach/router";
 export default class NavItem extends Component {
     render() {
         return (
-         <p className={styles.navItem} onClick={this.props.toggleMenu}>
-             <Link to={this.props.route}>
+         <p onClick={this.props.toggleMenu}>
+             <Link className={styles.navItem} to={this.props.route}>
                  {this.props.name}
              </Link>
-
          </p>
         )
     }

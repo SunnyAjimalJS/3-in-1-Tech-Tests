@@ -1,11 +1,11 @@
 .appHeader {
+    font-family:'Quicksand';
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 75px;
-    padding: 0px 20px;
+    height: 55px;
+    padding: 0px 12px;
     background-color: lightseagreen;
-    border-bottom: 3px #1a1381 solid;
     max-width: 100vw;
   
     h1 {
@@ -22,9 +22,19 @@
   
       &:hover {
         cursor: pointer;
-        color: #1a1381;
+        color: #080446;
       }
     }
+  }
+
+  .subHeader{
+    background-color: lightseagreen;
+    border-bottom: 3px #080446 solid;
+    font-family:'Quicksand';
+    margin-top: -22px;
+    color: white;
+    height: 25px;
+    padding: 0px 22px;
   }
   
   @media only screen and (min-width: 400px) {

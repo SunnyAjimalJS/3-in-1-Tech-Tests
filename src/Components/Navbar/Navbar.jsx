@@ -16,8 +16,8 @@ export default class Navbar extends Component {
                 <nav>
                     <ul className={styles.navList}>
                         <NavItem toggleMenu={this.props.toggleMenu} route="/main" name="Home" />
-                        <NavItem toggleMenu={this.props.toggleMenu} route="/football" name="Football Team Picker" />
-                        <NavItem toggleMenu={this.props.toggleMenu} route="/weatherapi" name="WeatherAPI - 3 Cities" />
+                        <NavItem toggleMenu={this.props.toggleMenu} route="/football" name="Football Team Organiser" />
+                        <NavItem toggleMenu={this.props.toggleMenu} route="/weatherapi" name="Weather Cards - 3 Cities" />
                         <NavItem toggleMenu={this.props.toggleMenu} route="/quiz" name="One Question Quiz" />
                     </ul>
                 </nav>

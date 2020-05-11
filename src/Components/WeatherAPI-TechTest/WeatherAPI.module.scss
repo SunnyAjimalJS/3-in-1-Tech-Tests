@@ -1,6 +1,10 @@
 .allCards{ 
     display: flex; 
     flex-direction: row;
-    border: 2px solid black; 
     justify-content: space-evenly;
+    border: 2px solid black;
+    height: 490px;
+    background-image: url("./Assets/Grass.png");
+    background-size: contain;
+    // background-repeat: no-repeat;
 }
