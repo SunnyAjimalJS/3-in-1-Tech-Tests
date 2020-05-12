@@ -8,7 +8,7 @@
 - `cd` in to the directory from your terminal
 - `code .` to open up the code in your code editor
 
-### Setup
+### Setup and running on live server:
 
 - Run the below two commands:
 
