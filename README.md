@@ -5,7 +5,7 @@
 ### Clone the Repo
 
 - Clone this repo to your local machine using `https://github.com/SunnyAjimalJS/3-in-1-Tech-Tests.git`
-- `cd` in to weather-app directory from your terminal
+- `cd` in to the directory from your terminal
 - `code .` to open up the code in your code editor
 
 ### Setup
