@@ -1,5 +1,4 @@
-
-# Weather-App - Tech Test for NovaFutur
+# 3-in-1 React Tech Tests
 
 ## Instructions:
 
