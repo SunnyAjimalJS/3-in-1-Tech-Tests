@@ -17,11 +17,8 @@
 ```shell
 $ yarn install 
 ```
-> Now start/run the app on a live server:
+> Now start/run the app on a live server and open in browser:
 
 ```shell
 $ yarn start
 ```
-> Once this is complete you will see `Project is running at http://localhost:3000/`. Click on the link to open the App in your browser 
-
-![Recordit GIF](http://g.recordit.co/zX4b3eEwyP.gif)
